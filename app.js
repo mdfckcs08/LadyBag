@@ -1,15 +1,15 @@
-const { useState } = React;
+const { useState, useEffect } = React;
 
 // Iconos SVG
 const Camera = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
         <circle cx="12" cy="13" r="3"/>
     </svg>
 );
 
 const ShoppingBag = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
         <line x1="3" y1="6" x2="21" y2="6"/>
         <path d="M16 10a4 4 0 0 1-8 0"/>
@@ -17,7 +17,7 @@ const ShoppingBag = () => (
 );
 
 const LogOut = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
         <polyline points="16 17 21 12 16 7"/>
         <line x1="21" y1="12" x2="9" y2="12"/>
@@ -25,14 +25,14 @@ const LogOut = () => (
 );
 
 const Eye = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
         <circle cx="12" cy="12" r="3"/>
     </svg>
 );
 
 const Upload = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
         <polyline points="17 8 12 3 7 8"/>
         <line x1="12" y1="3" x2="12" y2="15"/>
@@ -40,24 +40,23 @@ const Upload = () => (
 );
 
 const DollarSign = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <line x1="12" y1="1" x2="12" y2="23"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
     </svg>
 );
 
 const FileText = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
         <polyline points="14 2 14 8 20 8"/>
         <line x1="16" y1="13" x2="8" y2="13"/>
         <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
     </svg>
 );
 
 const Trash2 = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polyline points="3 6 5 6 21 6"/>
         <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
         <line x1="10" y1="11" x2="10" y2="17"/>
@@ -66,21 +65,28 @@ const Trash2 = () => (
 );
 
 const ChevronLeft = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polyline points="15 18 9 12 15 6"/>
     </svg>
 );
 
 const ChevronRight = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polyline points="9 18 15 12 9 6"/>
     </svg>
 );
 
 const X = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <line x1="18" y1="6" x2="6" y2="18"/>
         <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+);
+
+const Loader = () => (
+    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>
 );
 
@@ -89,25 +95,55 @@ function TiendaBolsas() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [whatsappNumber, setWhatsappNumber] = useState('524338808797');
+    const [whatsappNumber] = useState('524338808797');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [products, setProducts] = useState([
-        {
-            id: 1,
-            name: 'Bolsa Elegante Rosa',
-            description: 'Bolsa de mano elegante con detalles dorados',
-            price: '$599',
-            images: ['data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300"%3E%3Crect fill="%23ff69b4" width="300" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="20" fill="white" text-anchor="middle" dy=".3em"%3EBolsa de Ejemplo%3C/text%3E%3C/svg%3E']
-        }
-    ]);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [uploading, setUploading] = useState(false);
 
     const [newProduct, setNewProduct] = useState({
         name: '',
         description: '',
         price: '',
-        images: ['', '', '']
+        imageFiles: [null, null, null]
     });
+
+    // Cargar productos desde Supabase
+    useEffect(() => {
+        loadProducts();
+        
+        // Suscribirse a cambios en tiempo real
+        const subscription = window.supabaseClient
+            .channel('products-channel')
+            .on('postgres_changes', 
+                { event: '*', schema: 'public', table: 'products' },
+                (payload) => {
+                    loadProducts();
+                }
+            )
+            .subscribe();
+
+        return () => {
+            subscription.unsubscribe();
+        };
+    }, []);
+
+    const loadProducts = async () => {
+        try {
+            const { data, error } = await window.supabaseClient
+                .from('products')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+            setProducts(data || []);
+        } catch (error) {
+            console.error('Error al cargar productos:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handleLogin = () => {
         if (username === 'admin' && password === 'admin123') {
@@ -128,38 +164,106 @@ function TiendaBolsas() {
         setPassword('');
     };
 
-    const handleImageUpload = (e, index) => {
+    const handleImageSelect = (e, index) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const newImages = [...newProduct.images];
-                newImages[index] = reader.result;
-                setNewProduct({ ...newProduct, images: newImages });
-            };
-            reader.readAsDataURL(file);
+            const newImageFiles = [...newProduct.imageFiles];
+            newImageFiles[index] = file;
+            setNewProduct({ ...newProduct, imageFiles: newImageFiles });
         }
     };
 
-    const handleAddProduct = () => {
-        const validImages = newProduct.images.filter(img => img !== '');
-        if (newProduct.name && newProduct.description && newProduct.price && validImages.length > 0) {
-            const product = {
-                id: products.length + 1,
-                ...newProduct,
-                images: validImages
-            };
-            setProducts([...products, product]);
-            setNewProduct({ name: '', description: '', price: '', images: ['', '', ''] });
-            alert('¡Producto agregado exitosamente!');
+    const uploadImageToSupabase = async (file) => {
+        const fileName = `${Date.now()}_${file.name}`;
+        const { data, error } = await window.supabaseClient.storage
+            .from('product-images')
+            .upload(fileName, file);
+
+        if (error) throw error;
+
+        const { data: { publicUrl } } = window.supabaseClient.storage
+            .from('product-images')
+            .getPublicUrl(fileName);
+
+        return publicUrl;
+    };
+
+    const handleAddProduct = async () => {
+        const validImageFiles = newProduct.imageFiles.filter(file => file !== null);
+        
+        if (newProduct.name && newProduct.description && newProduct.price && validImageFiles.length > 0) {
+            setUploading(true);
+            
+            try {
+                // Subir imágenes
+                const imageUrls = [];
+                for (const file of validImageFiles) {
+                    const url = await uploadImageToSupabase(file);
+                    imageUrls.push(url);
+                }
+                
+                // Guardar producto
+                const { error } = await window.supabaseClient
+                    .from('products')
+                    .insert([{
+                        name: newProduct.name,
+                        description: newProduct.description,
+                        price: newProduct.price,
+                        images: imageUrls
+                    }]);
+
+                if (error) throw error;
+                
+                // Resetear formulario
+                setNewProduct({
+                    name: '',
+                    description: '',
+                    price: '',
+                    imageFiles: [null, null, null]
+                });
+                
+                document.querySelectorAll('input[type="file"]').forEach(input => {
+                    input.value = '';
+                });
+                
+                alert('¡Producto agregado exitosamente!');
+                loadProducts();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al agregar el producto: ' + error.message);
+            } finally {
+                setUploading(false);
+            }
         } else {
             alert('Por favor completa todos los campos y sube al menos una imagen');
         }
     };
 
-    const handleDeleteProduct = (productId) => {
+    const handleDeleteProduct = async (product) => {
         if (window.confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-            setProducts(products.filter(p => p.id !== productId));
+            try {
+                // Eliminar imágenes del storage
+                for (const imageUrl of product.images) {
+                    const fileName = imageUrl.split('/').pop();
+                    await window.supabaseClient.storage
+                        .from('product-images')
+                        .remove([fileName]);
+                }
+                
+                // Eliminar producto de la base de datos
+                const { error } = await window.supabaseClient
+                    .from('products')
+                    .delete()
+                    .eq('id', product.id);
+
+                if (error) throw error;
+                
+                alert('Producto eliminado exitosamente');
+                loadProducts();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al eliminar el producto');
+            }
         }
     };
 
@@ -207,9 +311,7 @@ function TiendaBolsas() {
 
                     <div className="space-y-6">
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                Usuario
-                            </label>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">Usuario</label>
                             <input
                                 type="text"
                                 value={username}
@@ -220,9 +322,7 @@ function TiendaBolsas() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                Contraseña
-                            </label>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">Contraseña</label>
                             <input
                                 type="password"
                                 value={password}
@@ -291,12 +391,13 @@ function TiendaBolsas() {
                                             <input
                                                 type="file"
                                                 accept="image/*"
-                                                onChange={(e) => handleImageUpload(e, index)}
+                                                onChange={(e) => handleImageSelect(e, index)}
                                                 className="w-full px-3 py-2 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none text-sm"
+                                                disabled={uploading}
                                             />
-                                            {newProduct.images[index] && (
+                                            {newProduct.imageFiles[index] && (
                                                 <img
-                                                    src={newProduct.images[index]}
+                                                    src={URL.createObjectURL(newProduct.imageFiles[index])}
                                                     alt={`Preview ${index + 1}`}
                                                     className="w-full h-32 object-cover rounded-xl shadow-md"
                                                 />
@@ -317,6 +418,7 @@ function TiendaBolsas() {
                                     onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
                                     className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none"
                                     placeholder="Ej: Bolsa Elegante Rosa"
+                                    disabled={uploading}
                                 />
                             </div>
 
@@ -330,6 +432,7 @@ function TiendaBolsas() {
                                     onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })}
                                     className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none h-24"
                                     placeholder="Describe la bolsa, material, detalles especiales..."
+                                    disabled={uploading}
                                 />
                             </div>
 
@@ -344,14 +447,23 @@ function TiendaBolsas() {
                                     onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
                                     className="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none"
                                     placeholder="$599"
+                                    disabled={uploading}
                                 />
                             </div>
 
                             <button
                                 onClick={handleAddProduct}
-                                className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-purple-600 transition shadow-lg"
+                                disabled={uploading}
+                                className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-purple-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
-                                Agregar Producto
+                                {uploading ? (
+                                    <>
+                                        <Loader />
+                                        <span>Subiendo...</span>
+                                    </>
+                                ) : (
+                                    'Agregar Producto'
+                                )}
                             </button>
                         </div>
                     </div>
@@ -365,64 +477,78 @@ function TiendaBolsas() {
                         </h2>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {products.map((product) => (
-                            <div
-                                key={product.id}
-                                className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 relative"
-                            >
-                                {isAdmin && (
-                                    <button
-                                        onClick={() => handleDeleteProduct(product.id)}
-                                        className="absolute top-3 right-3 z-10 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition shadow-lg"
-                                        title="Eliminar producto"
-                                    >
-                                        <Trash2 />
-                                    </button>
-                                )}
-                                {!isAdmin && product.images.length > 1 && (
-                                    <button 
-                                        onClick={() => openImageGallery(product)}
-                                        className="absolute top-3 right-3 z-10 bg-purple-500 bg-opacity-90 text-white p-2.5 rounded-full hover:bg-purple-600 transition shadow-lg backdrop-blur-sm"
-                                        title="Ver todas las fotos"
-                                    >
-                                        <Eye />
-                                    </button>
-                                )}
-                                <div className="relative">
-                                    <img
-                                        src={product.images[0]}
-                                        alt={product.name}
-                                        className="w-full h-64 object-cover"
-                                    />
-                                    {product.images.length > 1 && (
-                                        <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-xs">
-                                            +{product.images.length - 1} foto{product.images.length > 2 ? 's' : ''}
-                                        </div>
+                    {loading ? (
+                        <div className="flex justify-center items-center py-12">
+                            <Loader />
+                            <span className="ml-3 text-gray-600">Cargando productos...</span>
+                        </div>
+                    ) : products.length === 0 ? (
+                        <div className="text-center py-12">
+                            <p className="text-gray-500 text-lg">No hay productos disponibles</p>
+                            {isAdmin && (
+                                <p className="text-gray-400 mt-2">Agrega tu primer producto arriba</p>
+                            )}
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {products.map((product) => (
+                                <div
+                                    key={product.id}
+                                    className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 relative"
+                                >
+                                    {isAdmin && (
+                                        <button
+                                            onClick={() => handleDeleteProduct(product)}
+                                            className="absolute top-3 right-3 z-10 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition shadow-lg"
+                                            title="Eliminar producto"
+                                        >
+                                            <Trash2 />
+                                        </button>
                                     )}
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                                    <p className="text-gray-600 mb-4">{product.description}</p>
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-2xl font-bold text-pink-600">{product.price}</span>
-                                        {isAdmin ? (
-                                            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-600 transition">
-                                                Ver más
-                                            </button>
-                                        ) : (
-                                            <button 
-                                                onClick={() => handleWhatsAppContact(product)}
-                                                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-600 transition"
-                                            >
-                                                LA QUIERO!
-                                            </button>
+                                    {!isAdmin && product.images && product.images.length > 1 && (
+                                        <button 
+                                            onClick={() => openImageGallery(product)}
+                                            className="absolute top-3 right-3 z-10 bg-purple-500 bg-opacity-90 text-white p-2.5 rounded-full hover:bg-purple-600 transition shadow-lg backdrop-blur-sm"
+                                            title="Ver todas las fotos"
+                                        >
+                                            <Eye />
+                                        </button>
+                                    )}
+                                    <div className="relative">
+                                        <img
+                                            src={product.images && product.images[0]}
+                                            alt={product.name}
+                                            className="w-full h-64 object-cover"
+                                        />
+                                        {product.images && product.images.length > 1 && (
+                                            <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-xs">
+                                                +{product.images.length - 1} foto{product.images.length > 2 ? 's' : ''}
+                                            </div>
                                         )}
                                     </div>
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
+                                        <p className="text-gray-600 mb-4">{product.description}</p>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-2xl font-bold text-pink-600">{product.price}</span>
+                                            {isAdmin ? (
+                                                <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-600 transition">
+                                                    Ver más
+                                                </button>
+                                            ) : (
+                                                <button 
+                                                    onClick={() => handleWhatsAppContact(product)}
+                                                    className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-600 transition"
+                                                >
+                                                    LA QUIERO!
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 {selectedProduct && (
